@@ -54,12 +54,14 @@ function sym(...args) {
       const sorted = first.concat(second).sort((a, b)=>{
         return a - b;
       });
-      const uniqArray = []
-      for (let i = 0; i < sorted.length; i++) {
-        if (uniqArray.indexOf(sorted[i]) === -1) {
-          uniqArray.push(sorted[i])
-        }
-      }
+      //easy way to remove dups from array(?!) longer form below
+      const uniqArray = [...new Set(sorted)]
+    //   const uniqArray = []
+    //   for (let i = 0; i < sorted.length; i++) {
+    //     if (uniqArray.indexOf(sorted[i]) === -1) {
+    //       uniqArray.push(sorted[i])
+    //     }
+    //   }
       return uniqArray;
     }
   }
@@ -81,7 +83,6 @@ function sym(...args) {
 //Tests
 console.log(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6, "the"], [1, 2, 3], [5, 3, 9, 8], [1], ["the", "quick", "brown", "fox"]))
 
-console.log(sym([1, 2, 3], [5, 2, 1, 4]))
 console.log("Test 1 passed: ", arraysEqual(sym([1, 2, 3], [5, 2, 1, 4]), [ 3, 4, 5 ]));
 console.log("Test 2 passed: ", arraysEqual(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5]));
 console.log("Test 3 passed: ", arraysEqual(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5]));
@@ -89,8 +90,6 @@ console.log("Test 4 passed: ", arraysEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]),
 console.log("Test 5 passed: ", arraysEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5]));
 console.log("Test 6 passed: ", arraysEqual(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]), [2, 3, 4, 6, 7]));
 console.log("Test 7 passed: ", arraysEqual(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]), [1, 2, 4, 5, 6, 7, 8, 9]));
-
-
 
 
 //compare arrays method for testing: https://stackoverflow.com/questions/6229197/how-to-know-if-two-arrays-have-the-same-values
@@ -109,3 +108,4 @@ function arraysEqual(_arr1, _arr2) {
     return true;
 
 }
+
