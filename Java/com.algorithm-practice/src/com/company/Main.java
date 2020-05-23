@@ -10,18 +10,19 @@ public class Main {
     public static void main(String[] args) {
         int[] array1 = {1,2,3,4,5};
         int[] array2 = {3,4,5,6,7};
-        
-        testSym(array1, array2);
-        testSym(array2, array1);
+
+
+        System.out.println(testSym(array1, array2)[0]);
+        System.out.println(testSym(array2, array1)[0]);
 
     }
 
-    private static int[] testSym(int[] List1, int[] List2) {
+    private static int[] testSym(int[] array1, int[] array2) {
 //        List<Integer> clonedList = Arrays.asList(List1);
-        int[] cloneList1 = Arrays.copyOf(List1, List1.length);
-        for (int i = 0; i < List1.length; i++) {
-            for (int j = 0; j < List2.length; j++) {
-                if (List1[i] == List2[j])
+        int[] cloneList1 = Arrays.copyOf(array1, array1.length);
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j])
                     cloneList1[i] = -1;
             }
         }
