@@ -31,4 +31,7 @@ function knightMoves(pos){
     }
 return moves;
 }
-console.log(knightMoves("h7"));
+
+console.log(knightMoves("a2"));//expected output 3
+console.log(knightMoves("c3"));//expected output 8
+console.log(knightMoves("h8"));//expected output 2
