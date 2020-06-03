@@ -17,6 +17,12 @@ public class Main {
 
     }
 
+
+    private static int[] symGroup(int[] array1, int[] array2){
+      
+    }
+
+
     private static int[] testSym(int[] array1, int[] array2) {
 //        List<Integer> clonedList = Arrays.asList(List1);
         int[] cloneList1 = Arrays.copyOf(array1, array1.length);

@@ -18,9 +18,9 @@ only unique values (no duplicates).
 
 function sym(...args) {
     const bigArray = []
-    for (const key of args){
-      if (typeof(key) === "object"){
-        bigArray.push(key)
+    for (const a of args){
+      if (typeof(a) === "object"){
+        bigArray.push(a)
       }
     }
     return recur(bigArray)
