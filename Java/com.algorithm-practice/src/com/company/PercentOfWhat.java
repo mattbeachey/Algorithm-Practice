@@ -2,6 +2,10 @@ package com.company;
 
 public class PercentOfWhat {
 
+	//refactor this to make it faster:
+	//first move decimal of percent to make integer, then set denominator
+	//then reduce fraction 
+
     public static int[] percentOfWhat(double percent){
 
         double bigger = 1;
