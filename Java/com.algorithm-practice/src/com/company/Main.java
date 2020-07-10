@@ -14,6 +14,12 @@ public class Main {
         //Digital Product
         System.out.println(DigitalProduct.digitsProduct(4));
 
+        //Percent of What
+        int[] answer = PercentOfWhat.percentOfWhat(53.5);
+        System.out.println(answer[0]);
+        System.out.println("out of");
+        System.out.println(answer[1]);
+
     }
 
 }
