@@ -34,7 +34,7 @@ let notFifteen = 0;
 let recurTimes = 0;
 function dealCards(noOfCards, cards, hand) {
     for (i = 0; i < noOfCards; i++) {
-        let whichCard = Math.floor(Math.random() * 51)
+        let whichCard = Math.floor(Math.random() * cards.length)
         let card = cards.splice(whichCard, 1)[0]
         if (card !== undefined){
             hand.push(card)
@@ -54,28 +54,61 @@ function dealCards(noOfCards, cards, hand) {
 
 
 let winningHands = 0;
+let straights = 0;
+let flushes = 0;
 let totalHands = 0;
+let winningCondition;
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 10000000; i++) {
     let hand = []
     let cards = []
 
-    newDeck(cards);
-    dealCards(3, cards, hand)
-
-    // console.log("hand number " + i)
-    // console.log(hand[0], hand[1], hand[2])
-    
     totalHands++
-    if (hand[0][0] + hand[1][0] + hand[2][0] === 21){
+
+    newDeck(cards);
+    dealCards(5, cards, hand)
+    
+    // if (hand[0][0] + hand[1][0] + hand[2][0] === 21){
+    //     winningHands++;
+    //     winningCondition = " added up to 21";
+    // } 
+
+    let straight = false;
+    let flush = false;
+    
+    if (hand[0][1] === hand[1][1] && 
+        hand[1][1] === hand[2][1] && 
+        hand[2][1] === hand[3][1] &&
+        hand[3][1] === hand[4][1]){
+            flush = true;
+            flushes++
+            // winningHands++
+            // winningCondition = " were a flush"
+            // console.log(hand[0], hand[1], hand[2], hand[3], hand[4])
+        }
+        
+    
+    if (hand[0][0] + 1 === hand[1][0] && 
+        hand[1][0] + 1 === hand[2][0] && 
+        hand[2][0] + 1 === hand[3][0] &&
+        hand[3][0] + 1 === hand[4][0]){
+            straight = true;
+            straights++
+            // winningHands++
+            // winningCondition = " were a straight"
+            // console.log(hand[0], hand[1], hand[2], hand[3], hand[4])
+        }
+
+    if (flush === true && straight === true){
         winningHands++
-        // console.log(hand)
-        // console.log("WIIIIINNNNNNNERRRRRR!!!!!!!")
-        // console.log("this was hand number " + i)
-        // console.log(" ")
-    } 
+        console.log(hand[0], hand[1], hand[2], hand[3], hand[4])
+    }
+
+    winningCondition = " were a straight flush"
 }
-console.log(winningHands + " out of " + totalHands + " added up to 21")
+console.log(winningHands + " out of " + totalHands + winningCondition);
+console.log("There were " + flushes + " vanilla flushes");
+console.log("There were " + straights + " vanilla straights");
 console.log("we used recursion to fix it " + recurTimes + " times!!!")
 
 // console.log("Total hands that equal 15: " + fifteen);
