@@ -1,6 +1,6 @@
 
 let suits = ["H", "D", "S", "C"]
-let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
 let fifteenHands = []
 
@@ -56,10 +56,12 @@ function dealCards(noOfCards, cards, hand) {
 let winningHands = 0;
 let straights = 0;
 let flushes = 0;
+let royalFlushes = 0;
 let totalHands = 0;
 let winningCondition;
+const handsToDeal = 10000000
 
-for (let i = 0; i < 10000000; i++) {
+for (let i = 0; i < handsToDeal; i++) {
     let hand = []
     let cards = []
 
@@ -67,6 +69,11 @@ for (let i = 0; i < 10000000; i++) {
 
     newDeck(cards);
     dealCards(5, cards, hand)
+
+    //sort hand by value
+    hand.sort(function(a, b){
+        return a[0] - b[0]
+    });
     
     // if (hand[0][0] + hand[1][0] + hand[2][0] === 21){
     //     winningHands++;
@@ -88,6 +95,7 @@ for (let i = 0; i < 10000000; i++) {
         }
         
     
+        
     if (hand[0][0] + 1 === hand[1][0] && 
         hand[1][0] + 1 === hand[2][0] && 
         hand[2][0] + 1 === hand[3][0] &&
@@ -101,12 +109,18 @@ for (let i = 0; i < 10000000; i++) {
 
     if (flush === true && straight === true){
         winningHands++
-        console.log(hand[0], hand[1], hand[2], hand[3], hand[4])
+        if (hand[4][0] === 13){
+            royalFlushes++
+            console.log("ROYAL FLUSH!!!!!!!")
+            console.log("Hand number " + i + ":")
+            console.log(hand[0], hand[1], hand[2], hand[3], hand[4])
+        }
     }
 
     winningCondition = " were a straight flush"
 }
 console.log(winningHands + " out of " + totalHands + winningCondition);
+console.log("There were " + royalFlushes + " royal flushes");
 console.log("There were " + flushes + " vanilla flushes");
 console.log("There were " + straights + " vanilla straights");
 console.log("we used recursion to fix it " + recurTimes + " times!!!")
