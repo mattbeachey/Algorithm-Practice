@@ -58,7 +58,6 @@ let totalHands = 0;
 
 for (let i = 0; i < 1000; i++) {
     let hand = []
-    // let newCards = [...cards]
     let cards = []
 
     newDeck(cards);
