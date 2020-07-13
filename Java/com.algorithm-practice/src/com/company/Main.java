@@ -20,6 +20,9 @@ public class Main {
         System.out.println("out of");
         System.out.println(answer[1]);
 
+        //Rectangle Rotation (https://app.codesignal.com/arcade/code-arcade/labyrinth-of-nested-loops/tuKA5f3zpzkKKejJx)
+        System.out.println(RectangleRotation.recRot(6, 4));
+
     }
 
 }
