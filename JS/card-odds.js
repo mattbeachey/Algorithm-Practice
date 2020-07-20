@@ -15,15 +15,17 @@ function newDeck(cards) {
 }
 
 
-function p(...args){
-    let argString;
+// function p(...args){
+//     let argString;
     
-    args.forEach( arg => {
-        console.log(arg)
-        argString += arg + ", "
-    })
-    console.log(argString)
-}
+//     args.forEach( arg => {
+//         console.log(arg)
+//         argString += arg + ", "
+//     })
+//     console.log(argString)
+// }
+
+p = console.log;
 
 let num = 8;
 let string = "tree";
