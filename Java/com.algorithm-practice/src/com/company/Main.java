@@ -20,8 +20,8 @@ public class Main {
 
         //Minimum Distribution Triplet (https://app.codesignal.com/challenge/LPAySw9MQXCi7934W)
         int[] a = {4, 30};
-        int[] b = {6, 12, 20, 7 ,8, 9, 100};
-        int[] c = {10, 37, 7, 6, 5, 4, 3};
+        int[] b = {6, 12, 20, 13};
+        int[] c = {10, 37, 11};
         System.out.println(MinDistTriplet.finder(a ,b, c));
 
     }

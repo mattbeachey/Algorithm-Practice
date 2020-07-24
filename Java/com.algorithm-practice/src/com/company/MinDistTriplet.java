@@ -6,16 +6,20 @@ public class MinDistTriplet {
 
         int globalSmallest = Integer.MAX_VALUE;
         StringBuilder sb = new StringBuilder("!");
+        int count = 0;
 
         for (int i = 0; i < a.length; i ++){
             sb.append("-");
-            System.out.println(sb.toString());
+            count++;
+            System.out.println(count + ": " + sb.toString());
             for (int j = 0; j < b.length; j++){
                 sb.append("_");
-                System.out.println(sb.toString());
+                count++;
+                System.out.println(count + ": " + sb.toString());
                 for (int k = 0; k < c.length; k++){
                     sb.append("*");
-                    System.out.println(sb.toString());
+                    count++;
+                    System.out.println(count + ": " + sb.toString());
                     int smallestXandY = Integer.MAX_VALUE;
                     int smallestYandZ = Integer.MAX_VALUE;
                     int smallestZandX = Integer.MAX_VALUE;
@@ -56,5 +60,4 @@ public class MinDistTriplet {
         return mod % orig;
     }
 //See you, space cowboy
-
 }
