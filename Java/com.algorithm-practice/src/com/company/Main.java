@@ -1,10 +1,5 @@
 package com.company;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -22,6 +17,12 @@ public class Main {
 
         //Rectangle Rotation (https://app.codesignal.com/arcade/code-arcade/labyrinth-of-nested-loops/tuKA5f3zpzkKKejJx)
         System.out.println(RectangleRotation.recRot(6, 4));
+
+        //Minimum Distribution Triplet (https://app.codesignal.com/challenge/LPAySw9MQXCi7934W)
+        int[] a = {4, 30};
+        int[] b = {6, 12, 20};
+        int[] c = {10, 37};
+        System.out.println(MinDistTriplet.finder(a ,b, c));
 
     }
 
