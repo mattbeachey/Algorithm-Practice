@@ -1,3 +1,5 @@
+p = console.log;
+
 function updateInventory(arr1, arr2) {
     // All inventory must be accounted for or you're fired!
     
@@ -46,4 +48,28 @@ const newInv = [
     [7, "Toothpaste"]
 ];
 
-console.log(updateInventory(curInv, newInv));
+// console.log(updateInventory(curInv, newInv));
+
+
+
+function genSort(arr){
+    p(arr);
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            p("checking "+ arr[i] +" and " + arr[j])
+            if (arr[i] > arr[j] && arr[j] !== arr[i]){
+                p("move " + arr[i] + " to the right of " + arr[j]);
+                const toMove = arr.splice(i, 1)[0];
+                arr.splice(j, 0, toMove);
+                p(arr);
+            }
+            p("--------------------")
+            
+        }
+        
+    }
+    return arr;
+}
+
+
+p(genSort([7,4,3,9,2,5]));
