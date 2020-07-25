@@ -15,6 +15,27 @@ function newDeck(cards) {
 }
 
 
+// function p(...args){
+//     let argString;
+    
+//     args.forEach( arg => {
+//         console.log(arg)
+//         argString += arg + ", "
+//     })
+//     console.log(argString)
+// }
+
+p = console.log;
+
+let num = 8;
+let string = "tree";
+let bool = true;
+p(num, string, true)
+p(num + string + true)
+console.log(num, string, true)
+console.log(num + string + true)
+
+
 
 let fifteen = 0;
 let notFifteen = 0;
