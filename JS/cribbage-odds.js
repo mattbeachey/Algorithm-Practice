@@ -20,9 +20,15 @@ function dealHand(num){
     }
     return hand;
 }
-// console.log(dealHand(5));
 
-// console.log(dealHand(5))
+// hand = [
+//     { suit: 'C', type: 1 },
+//     { suit: 'H', type: 2 },
+//     { suit: 'D', type: 3 },
+//     { suit: 'D', type: 4 },
+//     { suit: 'H', type: 5 }
+//   ]
+// console.log(checkHand(hand))
 
 console.log(checkHand(dealHand(5)))
 
@@ -45,18 +51,27 @@ function checkHand(hand){
     
 
     for (let i = 0; i < hand.length; i++){
-        if (hand[i].type === hand[i + 1].type &&
-            hand[i + 1].type === hand[i + 2].type &&
-            hand[i + 2].type === hand[i + 3].type &&
-            hand[i + 3].type === hand[i + 4].type){
-
-        } else  if (hand[i].type === hand[i + 1].type &&
-            hand[i + 1].type === hand[i + 2].type &&
-            hand[i + 2].type === hand[i + 3].type){
-
-        } else if (hand[i].type === hand[i + 1].type &&
-            hand[i + 1].type === hand[i + 2].type ){
-
+        if (i === 0){
+            if (i === 0 &&
+                hand[i].type + 1 === hand[i + 1].type &&
+                hand[i + 1].type + 1 === hand[i + 2].type &&
+                hand[i + 2].type + 1 === hand[i + 3].type &&
+                hand[i + 3].type + 1 === hand[i + 4].type){
+                    console.log("straight")
+            } 
+        }     
+        if (i < 2 ) {      
+            if (hand[i].type + 1  === hand[i + 1].type &&
+                hand[i + 1].type + 1  === hand[i + 2].type &&
+                hand[i + 2].type + 1  === hand[i + 3].type){
+                console.log("med straight")
+            }  
+        }
+        if (i < 3){
+            if (hand[i].type + 1  === hand[i + 1].type &&
+                hand[i + 1].type + 1  === hand[i + 2].type){
+                console.log("small straight")
+            }
         }
     }
 
