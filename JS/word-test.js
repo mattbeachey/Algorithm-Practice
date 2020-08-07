@@ -47,3 +47,5 @@ for (let i = 0; i < Object.keys(resultsObject).length; i++){
 resultsObject["Most Common Word-Length"] = mostOccur[0];
 
 console.log(resultsObject);
+
+
