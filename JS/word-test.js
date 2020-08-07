@@ -24,7 +24,7 @@ function wordReturn(word){
 }
 
 
-writeWords(1000);
+writeWords(10000);
 
 for (let i = 0; i < finalWordArray.length; i++){
     if (isNaN(resultsObject[finalWordArray[i].length])){
@@ -34,13 +34,16 @@ for (let i = 0; i < finalWordArray.length; i++){
     }
 }
 
+let mostOccur = [0, 0];
 for (let i = 0; i < Object.keys(resultsObject).length; i++){
     if (resultsObject[i+1] !== undefined){
+        resultsObject[i+1] > mostOccur[1]? mostOccur = [(i + 1), resultsObject[i+1]] : mostOccur;
         continue;
-    } else {
-        resultsObject["firstNonOccurence"] = (i + 1) + " letter word";
-        break;
+    } else if (resultsObject["First Non-Occurence"] === undefined){
+        resultsObject["First Non-Occurence"] = (i + 1) + " letter word";
     }
 }
 
-return resultsObject;
+resultsObject["Most Common Word-Length"] = mostOccur[0];
+
+console.log(resultsObject);
