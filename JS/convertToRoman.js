@@ -1,9 +1,9 @@
 const roms = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
-let totalString = "";
+let finalString = "";
 
 function convertToRoman(num) {
     recur(num);
-    return totalString;
+    return finalString;
   }
   
 
@@ -12,12 +12,14 @@ function recur(num){
     let leftPrecede = false;
     let getPrecede = false;
     for (const [letter, val] of Object.entries(roms)){
+        //this happens until it has been determined that a left-preceding nubmer is needed
         if (getPrecede === false){
+            //narrows down which base to begin with and adds that to nearest object
             if (num >= val){
                 nearest[letter] = val;
                 break;
             } 
-    
+            //determines if numeral will need left-proceeder - ie. IX, CD, etc.
             if (num >= (val - (val/10)) && val.toString()[0] !== "5"){
                 leftPrecede = true;
                 nearest[letter] = val;
@@ -28,7 +30,9 @@ function recur(num){
                 nearest[letter] = val;
                 getPrecede = true;
             } 
-        } else if(val.toString()[0] !== "5"){
+        }
+        //this guarantees that only non-5 numbers will be added for left-preceders. If it is a 5 it skips to the next 
+        else if(val.toString()[0] !== "5"){
             nearest[letter] = val;
             break;
         } else {
@@ -37,18 +41,19 @@ function recur(num){
 
     }
 
+    //if there is no left-preceding number, add value to the finalString, find remainder and start again with remainder
     if (leftPrecede === false){
         for (let i = 0; i < Math.floor(num / Object.values(nearest)[0]); i++){
-            totalString += Object.keys(nearest)[0];
+            finalString += Object.keys(nearest)[0];
         }
         let remainder = num % Object.values(nearest)[0];
         remainder > 0 ? recur(remainder) : console.log("all done");
-    } else {
-        totalString += Object.keys(nearest)[1];
-        totalString += Object.keys(nearest)[0];
+    } else { //if there is left-preceding number, add both to finalString and start again with remainder
+        finalString += Object.keys(nearest)[1];
+        finalString += Object.keys(nearest)[0];
         let remainder = num % (Object.values(nearest)[1] - Object.values(nearest)[0]);
         remainder > 0 ? recur(remainder) : console.log("all done");
     } 
 }
 
-console.log(convertToRoman(3999));
+console.log(convertToRoman(399));
