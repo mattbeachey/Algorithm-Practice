@@ -1,23 +1,11 @@
 const roms = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
-let totals = {}
+let totalString = "";
 
 function convertToRoman(num) {
     recur(num);
-    let finalString = "";
-    for (const [letter, quantity] of Object.entries(totals)){
-        for (let i = 0; i < quantity; i++){
-            finalString += letter;
-        }
-    }
-
-    return finalString;
+    return totalString;
   }
   
-console.log(convertToRoman(988));
-  
-// let number = 100;
-// console.log(number.toString()[0] !== "5");
-
 
 function recur(num){
     let nearest = {}
@@ -50,13 +38,17 @@ function recur(num){
     }
 
     if (leftPrecede === false){
-        totals[Object.keys(nearest)[0]] = Math.floor(num / Object.values(nearest)[0]);
+        for (let i = 0; i < Math.floor(num / Object.values(nearest)[0]); i++){
+            totalString += Object.keys(nearest)[0];
+        }
         let remainder = num % Object.values(nearest)[0];
         remainder > 0 ? recur(remainder) : console.log("all done");
     } else {
-        totals[Object.keys(nearest)[1]] = 1;
-        totals[Object.keys(nearest)[0]] = 1;
+        totalString += Object.keys(nearest)[1];
+        totalString += Object.keys(nearest)[0];
         let remainder = num % (Object.values(nearest)[1] - Object.values(nearest)[0]);
         remainder > 0 ? recur(remainder) : console.log("all done");
     } 
 }
+
+console.log(convertToRoman(3999));
