@@ -1,7 +1,6 @@
 p = console.log;
 
 function updateInventory(arr1, arr2) {
-    // All inventory must be accounted for or you're fired!
     
     for (let i = 0; i < arr2.length; i++){
         let inCur = {in: false, index: 0};
@@ -72,4 +71,4 @@ function genSort(arr){
 }
 
 
-p(genSort([7,4,3,9,2,5]));
+p(genSort([1,2,3, 4, 5]));
