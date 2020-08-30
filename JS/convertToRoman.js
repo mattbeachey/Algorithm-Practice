@@ -1,4 +1,4 @@
-const roms = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+const roms = {ê: 100000, ï: 50000, ↂ: 10000, ↁ: 5000, M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
 let finalString = "";
 
 function convertToRoman(num) {
@@ -57,7 +57,7 @@ function recur(num){
     } 
 }
 
-console.log(convertToRoman(999));
+console.log(convertToRoman(112000));
 
 // let oneThruThou = {};
 // for (let i = 1; i < 1000; i++){
