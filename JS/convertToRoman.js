@@ -2,6 +2,7 @@ const roms = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
 let finalString = "";
 
 function convertToRoman(num) {
+    finalString = "";
     recur(num);
     return finalString;
   }
@@ -47,13 +48,20 @@ function recur(num){
             finalString += Object.keys(nearest)[0];
         }
         let remainder = num % Object.values(nearest)[0];
-        remainder > 0 ? recur(remainder) : console.log("all done");
+        remainder > 0 ? recur(remainder) : console.log();
     } else { //if there is left-preceding number, add both to finalString and start again with remainder
         finalString += Object.keys(nearest)[1];
         finalString += Object.keys(nearest)[0];
         let remainder = num % (Object.values(nearest)[1] - Object.values(nearest)[0]);
-        remainder > 0 ? recur(remainder) : console.log("all done");
+        remainder > 0 ? recur(remainder) : console.log();
     } 
 }
 
-console.log(convertToRoman(399));
+console.log(convertToRoman(999));
+
+// let oneThruThou = {};
+// for (let i = 1; i < 1000; i++){
+//     oneThruThou[i] = convertToRoman(parseInt(i));
+// }
+// console.log(oneThruThou);
+
