@@ -48,11 +48,15 @@ function recur(num){
             finalString += Object.keys(nearest)[0];
         }
         let remainder = num % Object.values(nearest)[0];
+        console.log("Remainder : " + remainder)
+        console.log("String progress: " + finalString)
         remainder > 0 ? recur(remainder) : console.log();
     } else { //if there is left-preceding number, add both to finalString and start again with remainder
         finalString += Object.keys(nearest)[1];
         finalString += Object.keys(nearest)[0];
         let remainder = num % (Object.values(nearest)[1] - Object.values(nearest)[0]);
+        console.log("Remainder : " + remainder)
+        console.log("String progress: " + finalString)
         remainder > 0 ? recur(remainder) : console.log();
     } 
 }
@@ -64,4 +68,3 @@ console.log(convertToRoman(112000));
 //     oneThruThou[i] = convertToRoman(parseInt(i));
 // }
 // console.log(oneThruThou);
-
