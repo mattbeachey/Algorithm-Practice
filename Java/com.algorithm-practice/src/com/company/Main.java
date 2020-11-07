@@ -19,10 +19,15 @@ public class Main {
 //        System.out.println(RectangleRotation.recRot(6, 4));
 
         //Minimum Distribution Triplet (https://app.codesignal.com/challenge/LPAySw9MQXCi7934W)
-        int[] a = {4, 30};
-        int[] b = {6, 12, 20, 13};
-        int[] c = {10, 37, 11};
-        System.out.println(MinDistTriplet.finder(a ,b, c));
+//        int[] a = {4, 30};
+//        int[] b = {6, 12, 20, 13};
+//        int[] c = {10, 37, 11};
+//        System.out.println(MinDistTriplet.finder(a ,b, c));
+
+        //GoogLamba1
+        int[] a = {4, 7, 6, 9, 11};
+        int[] b = {4, 7, 6, 9, 11, 55};
+        System.out.println(GoogLamba1.solution(a, b));
 
     }
 
