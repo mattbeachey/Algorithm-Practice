@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class GoogLamba1 {
+public class GoogLambda1 {
 
     public static int solution(int[] x, int[] y) {
         return x.length > y.length ? checker(x,y) : checker(y,x);

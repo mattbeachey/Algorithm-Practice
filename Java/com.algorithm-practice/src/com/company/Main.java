@@ -24,10 +24,19 @@ public class Main {
 //        int[] c = {10, 37, 11};
 //        System.out.println(MinDistTriplet.finder(a ,b, c));
 
-        //GoogLamba1
-        int[] a = {4, 7, 6, 9, 11};
-        int[] b = {4, 7, 6, 9, 11, 55};
-        System.out.println(GoogLamba1.solution(a, b));
+        //GoogLambda1
+//        int[] a = {4, 7, 6, 9, 11};
+//        int[] b = {4, 7, 6, 9, 11, 55};
+//        System.out.println(GoogLambda1.solution(a, b));
+
+        //GoogLambda2
+        int[] a = {2, 0, 2, 2, 0};
+        int[] b = {-2, -3, 4, -5};
+        int[] c = {-3, -2, 100, 101, 102};
+        int[] d = {-3, -2, -5, 100, 101, 102};
+        System.out.println(GoogLambda2.solution(d));
+        //{-3, -2, 100, 101, 102}
+        //{6, 100, 101, 102}
 
     }
 
