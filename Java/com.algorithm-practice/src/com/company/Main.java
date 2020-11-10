@@ -30,13 +30,20 @@ public class Main {
 //        System.out.println(GoogLambda1.solution(a, b));
 
         //GoogLambda2
-        int[] a = {2, 0, 2, 2, 0};
-        int[] b = {-2, -3, 4, -5};
-        int[] c = {-3, -2, 100, 101, 102};
-        int[] d = {-3, -2, -5, 100, 101, 102};
-        System.out.println(GoogLambda2.solution(d));
-        //{-3, -2, 100, 101, 102}
-        //{6, 100, 101, 102}
+        int[] a = {2, 0, 2, 2, 0}; //expected: 8
+        int[] b = {-2, -3, 4, -5}; //expected: 60
+        int[] c = {-3, -2, 100, 101, 102}; //expected: 1030200
+        int[] d = {-3, -2, -5, 100, 101, 102}; //expected: 15453000
+        int[] e = {0}; //expected: 0?
+        int[] f = {1}; //expected: 0?
+        int[] g = {-1, 0}; //expected: 0
+        int[] h = {0, 0, 0}; //expected: 0
+        int[] i = {2, 2, 2, 0, 0}; //expected: 8
+        System.out.println(GoogLambda2.solution(g));
+
+        //Test
+        int n = g.length;
+        System.out.println(Test.maxProductSubset(g, n));
 
     }
 
