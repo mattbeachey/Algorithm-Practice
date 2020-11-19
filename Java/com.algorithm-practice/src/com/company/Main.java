@@ -58,9 +58,11 @@ public class Main {
         int[] i = {8, 7, 5, 5, 4, 2}; // remove 4: 87552
         int[] j = {8, 7, 5, 5, 7, 7, 4, 2, 1}; // remove 1: 87775542
         int[] k = {9, 8, 8}; //remove both 8s: 9
-        int[] l = {7, 7}; //remove all: -1
+        int[] l = {7, 7}; //remove all: 0
+        int[] m = {7, 0};
+        int[] n = {7, 7, 0}; //remove both 7s: 0
 
-        System.out.println(LargestDiv3.solution(j));
+        System.out.println(LargestDiv3.solution(k));
         //assumptions:
         //can always assume a 3, 6, or 9 will stay
         //when seeing what to remove, find smaller group mutliples of 3

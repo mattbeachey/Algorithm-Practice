@@ -16,7 +16,7 @@ public class LargestDiv3 {
         StringBuilder sb = new StringBuilder();
         digitsList.forEach(sb::append);
 
-        return sb.toString().length() > 0 ? Integer.parseInt(sb.toString()) : -1;
+        return sb.toString().length() > 0 ? Integer.parseInt(sb.toString()) : 0;
     }
 
     //helper methods
