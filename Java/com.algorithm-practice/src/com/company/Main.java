@@ -47,19 +47,18 @@ public class Main {
 //        System.out.println(GoogLambda2Fixed.solution(var));
 
         //LargestDiv3
-        int[] a = {1, 5, 8, 9}; //remove 5 - lowest that fits modulus rule
-        int[] b = {1, 2, 5, 8, 9}; //remove 1
-        int[] c = {24, 2, 2}; //remove both 2s
-        int[] d = {1, 3, 4, 27}; //remove 1 and 4 - tricky because of 3 between them
-        int[] e = {9, 1, 3, 4}; //same as above
-        int[] f = {9, 3, 4, 7}; //remove 4 and 7 - tricky because lowest num 3 needs to stay
-        int[] g = {7, 5, 3}; //
-        int[] h = {8, 7, 5, 4, 2}; //remove 2
-        int[] i = {8, 7, 5, 5, 4, 2}; // remove 4
-        int[] j = {8, 7, 5, 5, 7, 7, 4, 2}; // remove 2\
-        int[] k = {9, 8, 8}; //remove both 8s
-        int[] l = {7, 7}; //remove all
-        int[] m = {1, 1, 5};
+        int[] a = {1, 5, 8, 9}; //remove 5 - lowest that fits modulus rule: 981
+        int[] b = {1, 2, 5, 8, 9}; //remove 1: 9852
+        int[] c = {24, 2, 2}; //remove both 2s: 24
+        int[] d = {1, 3, 4, 27}; //remove 1 and 4 - tricky because of 3 between them: 273
+        int[] e = {9, 1, 3, 4}; //same as above: 93
+        int[] f = {9, 3, 4, 7}; //remove 4 and 7 - tricky because lowest num 3 needs to stay: 93
+        int[] g = {7, 5, 3}; // remove none: 753
+        int[] h = {8, 7, 5, 4, 2}; //remove 2: 8754
+        int[] i = {8, 7, 5, 5, 4, 2}; // remove 4: 87552
+        int[] j = {8, 7, 5, 5, 7, 7, 4, 2, 1}; // remove 1: 87775542
+        int[] k = {9, 8, 8}; //remove both 8s: 9
+        int[] l = {7, 7}; //remove all: -1
 
         System.out.println(LargestDiv3.solution(j));
         //assumptions:
