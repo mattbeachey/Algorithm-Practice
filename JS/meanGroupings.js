@@ -6,8 +6,8 @@ let a = [[4, 4], [2,3], [3,3,3], [2,3], [2, 4]]
 function overWorld(a){
     let meanObj = objectMap(a);
     let finalArray = []
-    for(const array of Object.entries(meanObj)){
-        finalArray.push(array[1]);
+    for(array in meanObj){
+        finalArray.push(meanObj[array]);
     }
 
     finalArray.sort((a, b) => {
