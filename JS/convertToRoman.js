@@ -50,18 +50,18 @@ function recur(num){
         let remainder = num % Object.values(nearest)[0];
         console.log("Remainder : " + remainder)
         console.log("String progress: " + finalString)
-        remainder > 0 ? recur(remainder) : console.log();
+        remainder > 0 && recur(remainder); //call recur again if remainder is greater than 0
     } else { //if there is left-preceding number, add both to finalString and start again with remainder
         finalString += Object.keys(nearest)[1];
         finalString += Object.keys(nearest)[0];
         let remainder = num % (Object.values(nearest)[1] - Object.values(nearest)[0]);
         console.log("Remainder : " + remainder)
         console.log("String progress: " + finalString)
-        remainder > 0 ? recur(remainder) : console.log();
+        remainder > 0 && recur(remainder); //call recur again if remainder is greater than 0
     } 
 }
 
-console.log(convertToRoman(112000));
+console.log(convertToRoman(1499));
 
 // let oneThruThou = {};
 // for (let i = 1; i < 1000; i++){
