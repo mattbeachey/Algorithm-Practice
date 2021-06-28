@@ -1,8 +1,8 @@
 initSum = 3050;
-payAmount = 300;
+payAmount = 50;
 int = 1.0125;
 period = 12;
-transferFee = 1.05;
+transferFee = 1.08;
 transfers = 1;
 
 function regs(initSum){
