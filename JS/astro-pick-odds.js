@@ -63,6 +63,9 @@ totalSets.forEach(pair => {
     results.tenRight += ammountRight === 10 ? 1 : 0;
     results.nineRight += ammountRight === 9 ? 1 : 0;
     results.eightRight += ammountRight === 8 ? 1 : 0;
+    if (ammountRight >= 9){
+        console.log(pair)
+    }
 })
 
 results.meanRight = (runningRight/results.totalSets)
