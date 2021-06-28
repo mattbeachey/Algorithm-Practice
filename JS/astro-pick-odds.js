@@ -10,7 +10,7 @@ function pairMaker(){
 }
 
 const totalSets = [];
-console.time("total time")
+console.time("building totalSets")
 let progress = ">"
 for (let i = 0; i < 1000000; i++){
     if (i % 100000 === 0){
@@ -19,7 +19,7 @@ for (let i = 0; i < 1000000; i++){
     }
     totalSets.push(pairMaker())
 }
-console.timeEnd("total time")
+console.timeEnd("building totalSets")
 // totalSets.push(    {
 //     '1': 'a',
 //     '2': 'b',
@@ -37,17 +37,25 @@ console.timeEnd("total time")
 
 const results = {
     totalSets: 0,
-    noneRight: 0,
-    allRight: 0,
-    meanRight: 0, 
     highestRight: 0,
+    allRight: 0,
     tenRight: 0,
     nineRight: 0,
-    eightRight: 0
+    eightRight: 0,
+    sevenRight: 0,
+    sixRight: 0,
+    fiveRight: 0,
+    fourRight: 0,
+    threeRight: 0,
+    twoRight: 0,
+    oneRight: 0,
+    noneRight: 0,
+    meanRight: 0, 
 }
 
 let runningRight = 0;
 
+console.time("checking totalSets")
 totalSets.forEach(pair => {
     const pairArray = Object.values(pair);
     let ammountRight = 0;
@@ -63,10 +71,18 @@ totalSets.forEach(pair => {
     results.tenRight += ammountRight === 10 ? 1 : 0;
     results.nineRight += ammountRight === 9 ? 1 : 0;
     results.eightRight += ammountRight === 8 ? 1 : 0;
+    results.sevenRight += ammountRight === 7 ? 1 : 0;
+    results.sixRight += ammountRight === 6 ? 1 : 0;
+    results.fiveRight += ammountRight === 5 ? 1 : 0;
+    results.fourRight += ammountRight === 4 ? 1 : 0;
+    results.threeRight += ammountRight === 3 ? 1 : 0;
+    results.twoRight += ammountRight === 2 ? 1 : 0;
+    results.oneRight += ammountRight === 1 ? 1 : 0;
     if (ammountRight >= 9){
         console.log(pair)
     }
 })
+console.timeEnd("checking totalSets")
 
 results.meanRight = (runningRight/results.totalSets)
 
