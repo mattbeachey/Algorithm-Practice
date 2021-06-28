@@ -17,7 +17,6 @@ public class GoogLambda2 {
         //if there are no numbers greater than 0, don't trim 0s
         Collections.sort(xsList, Collections.reverseOrder());
         xsList = xsList.get(0) == 0 ? xsList : trim0s(xsList);
-
         int negCount = countNegative(xsList);
 
         //if odd number of negatives
@@ -26,10 +25,10 @@ public class GoogLambda2 {
         }
 
         //if no index has been removed yet
-//        if (!isSubset){
-//            xsList = groupHighestNeg(xsList, negCount);
-//            xsList = removeLowestUnit(xsList);
-//        }
+        if (!isSubset){
+            xsList = groupHighestNeg(xsList, negCount);
+            xsList = removeLowestUnit(xsList);
+        }
 
         //return total product of subset of xsList
         return Integer.toString(listProduct(xsList));
@@ -96,13 +95,14 @@ public class GoogLambda2 {
     }
 
     public static List<Integer> trim0s(List<Integer> xsList){
-            List<Integer> newList = new ArrayList<>();
-            for(Integer num : xsList){
-                if (num != 0){
-                    newList.add(num);
-                    isSubset = true;
-                }
+        List<Integer> newList = new ArrayList<>();
+        for(Integer num : xsList){
+            if (num != 0){
+                newList.add(num);
             }
+        }
+        if(xsList.size() != newList.size())
+            isSubset = true;
         return newList;
     }
     //endregion
