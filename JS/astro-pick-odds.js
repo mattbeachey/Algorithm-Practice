@@ -40,7 +40,10 @@ const results = {
     noneRight: 0,
     allRight: 0,
     meanRight: 0, 
-    highestRight: 0
+    highestRight: 0,
+    tenRight: 0,
+    nineRight: 0,
+    eightRight: 0
 }
 
 let runningRight = 0;
@@ -57,8 +60,12 @@ totalSets.forEach(pair => {
     results.noneRight += ammountRight === 0 ? 1 : 0;
     results.allRight += ammountRight === 12 ? 1 : 0;
     results.highestRight = ammountRight > results.highestRight ? ammountRight : results.highestRight;
+    results.tenRight += ammountRight === 10 ? 1 : 0;
+    results.nineRight += ammountRight === 9 ? 1 : 0;
+    results.eightRight += ammountRight === 8 ? 1 : 0;
 })
 
 results.meanRight = (runningRight/results.totalSets)
 
+console.log(results.allRight >= 1 ? "!!!!!!!!!!!!!!!!!!WINNER!!!!!!!!!!!!!!!!!!" : "")
 console.log(results)
