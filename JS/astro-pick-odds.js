@@ -66,7 +66,7 @@ function checkSets(totalSets){
         results.threeRight += ammountRight === 3 ? 1 : 0;
         results.twoRight += ammountRight === 2 ? 1 : 0;
         results.oneRight += ammountRight === 1 ? 1 : 0;
-        if (ammountRight >= 9){
+        if (ammountRight >= 10){
             console.log(pair)
         }
     })
