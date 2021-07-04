@@ -1,9 +1,9 @@
 function pairMaker(){
-    const pairs = {}
+    const pairs = []
     const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"];
     for (let i = 1; i <= 12; i++){
         const pick = Math.floor(Math.random() * letters.length);
-        pairs[i] = letters[pick];
+        pairs[i - 1] = letters[pick];
         letters.splice(pick, 1);
     } 
     return pairs;
@@ -47,11 +47,10 @@ function runSets(setNum){
 function checkSets(totalSets){
     // console.time("checking totalSets")
     totalSets.forEach(pair => {
-        const pairArray = Object.values(pair);
         let ammountRight = 0;
     
-        for (let i = 0; i < pairArray.length; i++){
-            ammountRight += (pairArray[i].charCodeAt() - 97) === i ? 1 : 0;
+        for (let i = 0; i < pair.length; i++){
+            ammountRight += (pair[i].charCodeAt() - 97) === i ? 1 : 0;
         }
         runningRight += ammountRight;
         results.totalSets++;
@@ -99,6 +98,11 @@ while(results.allRight < 1){
     process.stdout.write('-')
     checkSets(runSets(1000000));
 }
+
+// for(let i = 0; i < 10; i++){
+//     process.stdout.write('-')
+//     checkSets(runSets(1000000));
+// }
 
 
 results.meanRight = (runningRight/results.totalSets)
