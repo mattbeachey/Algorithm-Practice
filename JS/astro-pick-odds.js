@@ -29,21 +29,23 @@ const results = {
 
 function runSets(setNum){
     const totalSets = [];
-    console.time("building totalSets")
+    // console.time("building totalSets")
     let progress = ">"
     for (let i = 0; i < setNum; i++){
         if (i % 100000 === 0){
-            console.log(progress);
-            progress += ">";
+            // console.log(progress);
+            // progress += ">";
+            // process.stdout.write("-")
         }
         totalSets.push(pairMaker())
     }
-    console.timeEnd("building totalSets")
+    // console.timeEnd("building totalSets")
+    // process.stdout.write('\n')
     return totalSets;
 }
 
 function checkSets(totalSets){
-    console.time("checking totalSets")
+    // console.time("checking totalSets")
     totalSets.forEach(pair => {
         const pairArray = Object.values(pair);
         let ammountRight = 0;
@@ -70,7 +72,7 @@ function checkSets(totalSets){
             console.log(pair)
         }
     })
-    console.timeEnd("checking totalSets")
+    // console.timeEnd("checking totalSets")
 }
 
 
@@ -93,7 +95,8 @@ function checkSets(totalSets){
 
 let runningRight = 0;
 console.time("total run time")
-for(let i = 0; i <10; i++) {
+while(results.allRight < 1){
+    process.stdout.write('-')
     checkSets(runSets(1000000));
 }
 
