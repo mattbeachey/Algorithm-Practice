@@ -61,7 +61,8 @@ function recur(num){
     } 
 }
 
-console.log(convertToRoman(1499));
+console.log(convertToRoman(process.argv[2]));
+// console.log(process.argv[2]);
 
 // let oneThruThou = {};
 // for (let i = 1; i < 1000; i++){
